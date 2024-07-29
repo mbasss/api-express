@@ -1,10 +1,11 @@
 import express from 'express';
+import apiRouter from './routes/api.js';
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-})
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
+app.use('/', apiRouter);
 
 app.listen(3000, () => console.log('Server running on port 3000'));
