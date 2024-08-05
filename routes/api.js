@@ -4,10 +4,8 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-  console.log(req.body);
-  
   res.json({
-    title: `Hello ${req.body.name}, umur ${req.body.age}`,
+    title: `Hello ${req.query.name}, umur ${req.body.age}`,
   }); 
 })
 
